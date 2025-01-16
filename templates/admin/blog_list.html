@@ -1,0 +1,30 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block title %}Blog list{% endblock %}
+
+{% block styles %}<link href="{{ url_for('static', filename='css/admin/blog_list.css')}}" rel="stylesheet">{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+
+{% block content %}
+<section class="blog-container">
+    <h2>Blog List</h2>
+    <div class="blog-list">
+        {% for post in posts %}
+        <section class="blog-item">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <p>{{ post.created_at }}</p>
+            <p>{{ post.updated_at }}</p>
+            <form action="{ url_for('edit_post', post_id=post.id) }">
+                <button type="submit">Edit</button>
+            </form>
+            <form action="{ url_for('delete_post', post_id=post.id) }">
+                <button type="submit">Delete</button>
+            </form>
+        </section>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

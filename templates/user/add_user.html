@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+
+{% block title %}home{% endblock %}
+
+{% block styles %}<link href="{{ url_for('static', filename='css/user/add_user.css')}}" rel="stylesheet">{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+
+{% block content %}
+<main>
+    <section class="user-form">
+        <h2>Add New User</h2>
+        <form action="/add_user" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email address" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+            <button type="submit">Add User</button>
+        </form>
+    </section>
+</main>
+{% endblock %}

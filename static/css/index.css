@@ -1,0 +1,49 @@
+.new-articles, .pickup-articles, .about {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.new-articles h2, .pickup-articles h2, .about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.article-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.article-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.pickup-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.pickup-item img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
