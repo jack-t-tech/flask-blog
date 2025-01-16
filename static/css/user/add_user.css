@@ -1,0 +1,69 @@
+/* General Styles */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main Section */
+main {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Form Section */
+.user-form h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.user-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.user-form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555555;
+}
+
+.user-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.user-form input:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #ffffff;
+}
+
+.user-form button {
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-form button:hover {
+    background-color: #0056b3;
+}

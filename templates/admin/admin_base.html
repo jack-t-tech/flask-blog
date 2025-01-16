@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/admin/admin_base.css')}}" rel="stylesheet">
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1>ブログ記事-Admin</h1>
+        <nav>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            <a href="{{ url_for('add_post') }}">Create Blog</a>
+            <a href="#">Add User</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="{{ url_for('blog_list') }}">Blog List</a>
+        </nav>
+    </header>
+    {% block content %}{% endblock %}
+    
+    <footer>
+        <p>&copy; 2025 blog</p>
+    </footer>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

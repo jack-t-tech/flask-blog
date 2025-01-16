@@ -1,0 +1,68 @@
+/* Container for Sections */
+.sections-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Individual Section Styles */
+.sections-container section {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Sections */
+.sections-container section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings */
+.sections-container section h2 {
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+/* Paragraphs */
+.sections-container section p {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.sections-container section form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover Effect */
+.sections-container section form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sections-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
