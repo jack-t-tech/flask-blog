@@ -82,7 +82,7 @@ def login():
         else:
             return redirect(url_for('login'))
 
-@app.route('/logout')  
+@app.route('/logout', methods=['GET'])
 def logout():
     session.pop('user_id', None)
     return redirect(url_for('login'))
