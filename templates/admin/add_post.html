@@ -2,20 +2,24 @@
 
 {% block title %}Blog list{% endblock %}
 
-{% block styles %}<link href="{{ url_for('static', filename='css/admin/add_post.css')}}" rel="stylesheet">{% endblock %}
+{% block styles %}
+<link href="{{ url_for('static', filename='css/admin/add_post.css')}}" rel="stylesheet">
+{% endblock %}
 
-{% block scripts %}{% endblock %}
-
+{% block scripts %}
+{% endblock %}
 
 {% block content %}
 <div class="add-post">
     <h2>Add Blog</h2>
-    <form action="{{ url_for('add_post') }}" method="post">
+    <form action="{{ url_for('blog.add_post') }}" method="post">
         <label for="title">Title</label>
         <input type="text" name="title" id="title" required>
         <label for="content">Content</label>
-        <textarea name="content" id="content" required></textarea>
+        <textarea name="content" id="content"></textarea>
         <button type="submit">Add Blog</button>
     </form>
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='content')}}
 </div>
 {% endblock %}

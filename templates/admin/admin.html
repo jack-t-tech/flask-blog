@@ -12,7 +12,7 @@
     <section class="read-article">
         <h2>Read Blog</h2>
         <p>You can read blog without signing in</p>
-        <form action="/blog_list">
+        <form action="{{ url_for('blog.blog_list') }}">
             <button type="submit">Read Blog</button>
         </form>
     </section>
@@ -20,7 +20,7 @@
     <section class="write-article">
         <h2>Write Blog</h2>
         <p>You can write blog after signing in</p>
-        <form action="/">
+        <form action="{{ url_for('blog.add_post') }}">
             <button type="submit">Write Blog</button>
         </form>
     </section>
@@ -28,7 +28,7 @@
     <section class="profile">
         <h2>Profile</h2>
         <p>You can edit your profile</p>
-        <form action="/">
+        <form action="{{ url_for('user.edit_profile') }}">
             <button type="submit">Profile</button>
         </form>
     </section>

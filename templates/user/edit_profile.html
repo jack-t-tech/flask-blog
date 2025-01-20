@@ -1,17 +1,29 @@
-{% extends 'user/user_base.html' %}
+{% extends 'admin/admin_base.html' %}
 
-{% block title %}login{% endblock %}
+{% block title %}Profile{% endblock %}
 
-{% block styles %}<link href="{{ url_for('static', filename='css/user/login.css')}}" rel="stylesheet">{% endblock %}
+{% block styles %}<link href="{{ url_for('static', filename='css/user/edit_profile.css')}}" rel="stylesheet">{% endblock %}
 
 {% block scripts %}{% endblock %}
 
-
 {% block content %}
-<section class="login-section">
-    <h2>Login</h2>
-    <form action="{{ url_for('user.login') }}" method="POST" novalidate>
+<section class="profile-section">
+    <h2>Pofile</h2>
+    <form method="POST" action="{{ url_for('user.edit_profile') }}" novalidate>
         {{ form.hidden_tag() }}
+        
+        <div>
+            {{ form.username.label }}
+            {{ form.username(class="form-control", placeholder="Enter your name") }}
+            {% if form.username.errors %}
+                <div class="errors">
+                {% for error in form.username.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        
         <div>
             {{ form.email.label }}
             {{ form.email(class="form-control", placeholder="Enter your email") }}
@@ -36,19 +48,8 @@
             {% endif %}
         </div>
 
-        <div>
-            {{ form.password2.label }}
-            {{ form.password2(class="form-control", placeholder="Enter your password") }}
-            {% if form.password2.errors %}
-                <div class="errors">
-                {% for error in form.password2.errors %}
-                    <p>{{ error }}</p>
-                {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-
         <button type="submit">{{ form.submit.label(class="form-submit")}}</button>
+        <a href="{{ url_for('blog.admin') }}">戻る</a>
     </form>
 </section>
 {% endblock %}

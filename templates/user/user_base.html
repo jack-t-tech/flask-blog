@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+
+{% block nav %}
+    <header>
+        <h1>ブログ記事</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="{{ url_for('blog.blog_listuser') }}">Read Blog</a>
+            <a href="{{ url_for('user.login') }}">LogIn</a>
+            <a href="{{ url_for('user.signup') }}">SignUp</a>
+        </nav> 
+    </header>
+{% endblock %}

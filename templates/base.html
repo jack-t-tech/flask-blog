@@ -9,19 +9,24 @@
     {% block styles %}{% endblock %}
 </head>
 <body>
-    <header>
-        <h1>ブログ記事</h1>
-        <nav>
-            <a href="/">Read Blog</a>
-            <a href="/login">LogIn</a>
-            <a href="/signup">SignUp</a>
-        </nav>
-    </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert {{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block nav %}{% endblock %}
+
     {% block content %}{% endblock %}
     
     <footer>
-        <p>&copy; 2025 blog</p>
+        <p>&copy; 2025 blog site</p>
     </footer>
     {% block scripts %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 
-{% extends 'base.html' %}
+{% extends 'user/user_base.html' %}
 
 {% block title %}home{% endblock %}
 
@@ -12,7 +12,7 @@
 <main>
     <section class="user-form">
         <h2>Add New User</h2>
-        <form action="/add_user" method="POST">
+        <form action="{{ url_for('user.add_user') }}" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Enter username" required>
 

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'user/user_base.html' %}
 
 {% block title %}home{% endblock %}
 
@@ -10,29 +10,24 @@
 {% block content %}
 <section class="about">
     <h2>About</h2>
-    <p>おかきの部屋では、心を込めてセレクトした雑貨や、インテリアをお届けしています。</p>
-    <p>読んでくれた方の暮らしが楽しくヒントになりますように。</p>
+    <p>ブログ記事投稿フォームブログ記事投稿フォームブログ記事投稿フォームブログ記事投稿フォーム</p>
+    <p>aboutにおけるコメントや内容を記入する．aboutにおけるコメントや内容を記入する．aboutにおけるコメントや内容を記入する．aboutにおけるコメントや内容を記入する．</p>
 </section>
 
-<section class="new-articles">
-    <h2>New Articles</h2>
-    <div class="articles-grid">
-        <div class="article-card">
-            <img src="https://via.placeholder.com/150" alt="Article Thumbnail">
-            <p>記事タイトル 1</p>
-        </div>
-        <div class="article-card">
-            <img src="https://via.placeholder.com/150" alt="Article Thumbnail">
-            <p>記事タイトル 2</p>
-        </div>
-        <div class="article-card">
-            <img src="https://via.placeholder.com/150" alt="Article Thumbnail">
-            <p>記事タイトル 3</p>
-        </div>
-        <div class="article-card">
-            <img src="https://via.placeholder.com/150" alt="Article Thumbnail">
-            <p>記事タイトル 4</p>
-        </div>
+<section class="blog-container">
+    <h2>Blog List</h2>
+    <div class="blog-list">
+        {% for post in posts %}
+        <section class="blog-item">
+            <h3>{{ post.title }}</h3>
+            <p class="content">{{ post.content[:20] }}...</p>
+            <p>created at: {{ post.created_at.strftime('%Y-%m') }}</p>
+            <p>updated at: {{ post.updated_at.strftime('%Y-%m') }}</p>
+            <form action="{{ url_for('blog.post_user_detail', post_id=post.id)}}">
+                <button type="submit">Detail</button>
+            </form>
+        </section>
+        {% endfor %}
     </div>
 </section>
 

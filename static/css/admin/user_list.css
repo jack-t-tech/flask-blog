@@ -1,0 +1,100 @@
+/* 全体のセクションスタイル */
+section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ユーザーリストのスタイル */
+.user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 各ユーザー項目のスタイル */
+.user-item {
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ユーザー名とメール */
+.user-item h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+.user-item p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* フォームのスタイル */
+.user-item form {
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.user-item button {
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-item button:hover {
+    background-color: #0056b3;
+}
+
+.user-item button[type="submit"]:last-child {
+    background-color: #dc3545;
+}
+
+.user-item button[type="submit"]:last-child:hover {
+    background-color: #a71d2a;
+}
+
+/* フォーム内のエラーメッセージ */
+.errors {
+    margin-top: 5px;
+    color: #ff4d4d;
+    font-size: 12px;
+}
+
+/* フォームのドロップダウン */
+.user-item .form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.user-item .form-control:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* ヘッダー */
+h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}

@@ -14,13 +14,16 @@
         {% for post in posts %}
         <section class="blog-item">
             <h3>{{ post.title }}</h3>
-            <p>{{ post.content }}</p>
-            <p>{{ post.created_at }}</p>
-            <p>{{ post.updated_at }}</p>
-            <form action="{ url_for('edit_post', post_id=post.id) }">
+            <p class="content">{{ post.content[:20] }}...</p>
+            <p>created at: {{ post.created_at.strftime('%Y-%m') }}</p>
+            <p>updated at: {{ post.updated_at.strftime('%Y-%m') }}</p>
+            <form action="{{ url_for('blog.post_admin_detail', post_id=post.id)}}">
+                <button type="submit">Detail</button>
+            </form>
+            <form action="{{ url_for('blog.edit_post', post_id=post.id) }}">
                 <button type="submit">Edit</button>
             </form>
-            <form action="{ url_for('delete_post', post_id=post.id) }">
+            <form action="{{ url_for('blog.delete_post', post_id=post.id) }}">
                 <button type="submit">Delete</button>
             </form>
         </section>

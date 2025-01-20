@@ -1,0 +1,27 @@
+{% extends 'user/user_base.html' %}
+
+{% block title %}Blog list{% endblock %}
+
+{% block styles %}<link href="{{ url_for('static', filename='css/user/blog_list.css')}}" rel="stylesheet">{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+
+{% block content %}
+<section class="blog-container">
+    <h2>Blog List</h2>
+    <div class="blog-list">
+        {% for post in posts %}
+        <section class="blog-item">
+            <h3>{{ post.title }}</h3>
+            <p class="content">{{ post.content[:20] }}...</p>
+            <p>created at: {{ post.created_at.strftime('%Y-%m') }}</p>
+            <p>updated at: {{ post.updated_at.strftime('%Y-%m') }}</p>
+            <form action="{{ url_for('blog.post_user_detail', post_id=post.id)}}">
+                <button type="submit">Detail</button>
+            </form>
+        </section>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

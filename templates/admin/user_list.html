@@ -1,0 +1,32 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block title %}User list{% endblock %}
+
+{% block styles %}<link href="{{ url_for('static', filename='css/admin/user_list.css')}}" rel="stylesheet">{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+{% block content %}
+<section>
+    <h2>User List</h2>
+    <div class="user-list">
+        {% for user in users %}
+        <section class="user-item">
+            <form action="{{ url_for('user.user_list') }}" method="POST">
+            <h3>{{ user.username }}</h3>
+            <p>{{ user.email }}</p>
+            <p>Role: {{ user.role.name }}</p>
+                <label for="role">Update Role:</label>
+                <select name="role" class="form-control">
+                    <option value="Admin">Admin</option>
+                    <option value="User">User</option>
+                </select>
+                <button type="submit">Update</button>
+            </form>
+            <a href="{{ url_for('user.delete_user') }}">Delete</a>
+        </section>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

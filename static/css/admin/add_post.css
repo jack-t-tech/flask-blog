@@ -1,69 +1,105 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
 .add-post {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* フォーム全体の最大幅 */
+    margin: 40px auto; /* 上下左右の中央に配置 */
+    padding: 20px; /* 内側の余白 */
+    background-color: #ffffff; /* 背景色 */
+    border: 1px solid #dee2e6; /* 外枠の色 */
+    border-radius: 10px; /* 角を丸くする */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    font-family: 'Noto Sans JP', sans-serif; /* フォントを指定 */
 }
 
 .add-post h2 {
-    text-align: center;
-    color: #444;
-    margin-bottom: 20px;
+    font-size: 2rem; /* 見出しのサイズ */
+    color: #212529; /* テキストの色 */
+    text-align: center; /* 中央寄せ */
+    margin-bottom: 20px; /* 下の余白 */
+}
+
+.add-post form {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    gap: 20px; /* 各フォーム要素の間隔 */
 }
 
 .add-post label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    font-size: 1rem; /* ラベルのフォントサイズ */
+    color: #495057; /* 色を濃いグレーに */
+    font-weight: 600; /* 強調 */
+    margin-bottom: 5px; /* ラベル下の余白 */
 }
 
-.add-post input[type="text"],
-.add-post textarea {
+.add-post input[type="text"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
-    background: #fefefe;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px; /* 角を丸くする */
+    background-color: #f8f9fa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
 }
 
-.add-post input[type="text"]:focus,
-.add-post textarea:focus {
-    outline: none;
-    border-color: #007BFF;
-    background: #f1f8ff;
+.add-post input[type="text"]:focus {
+    border-color: #80bdff; /* フォーカス時の枠線色 */
+    outline: none; /* デフォルトのアウトラインを削除 */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* フォーカス時の影 */
 }
 
-.add-post textarea {
-    height: 150px;
-    resize: vertical;
+.ckediter_editable_inline {
+    min-height: 500px;
+}
+
+.add-post #editor-container {
+    height: 400px; /* エディタの高さ */
+    background-color: #ffffff; /* 背景色 */
+    border: 1px solid #ced4da; /* 枠線 */
+    border-radius: 5px; /* 角を丸くする */
+    padding: 10px; /* 内側の余白 */
+    font-family: 'Noto Sans JP', sans-serif; /* フォント */
+    font-size: 1rem; /* 文字サイズ */
+    overflow-y: auto; /* 縦スクロールを許可 */
 }
 
 .add-post button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    color: #fff;
-    background: #007BFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+    padding: 12px 20px; /* ボタン内の余白 */
+    font-size: 1rem;
+    font-weight: 600; /* 太字 */
+    color: #ffffff; /* ボタンの文字色 */
+    background-color: #007bff; /* ボタンの背景色 */
+    border: none; /* 枠線を削除 */
+    border-radius: 5px; /* 角を丸くする */
+    cursor: pointer; /* カーソルをポインタに */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* アニメーション */
 }
 
 .add-post button:hover {
-    background: #0056b3;
+    background-color: #0056b3; /* ホバー時の背景色 */
+    transform: translateY(-2px); /* ホバー時に少し浮かせる */
+}
+
+.add-post button:focus {
+    outline: none; /* デフォルトのフォーカスを削除 */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* フォーカス時の影 */
+}
+
+@media (max-width: 768px) {
+    .add-post {
+        padding: 15px; /* 小さい画面で内側の余白を縮小 */
+        margin: 20px auto; /* マージンを調整 */
+    }
+
+    .add-post h2 {
+        font-size: 1.8rem; /* 見出しのサイズを少し小さく */
+    }
+
+    .add-post input[type="text"],
+    .add-post #editor-container {
+        font-size: 0.9rem; /* フォームの文字サイズを縮小 */
+    }
+
+    .add-post button {
+        font-size: 0.9rem; /* ボタンの文字サイズを縮小 */
+        padding: 10px 15px; /* ボタン内の余白を縮小 */
+    }
 }

@@ -46,27 +46,39 @@
 }
 
 /* Blog Content */
-.blog-item p {
-    font-size: 1rem;
+.blog-item .content {
+    font-size: 1.0rem;
     color: #555555;
     margin-bottom: 10px;
 }
 
+.blog-item p {
+    display: flex;
+    font-size: 0.8rem;
+    justify-content: space-between;
+    align-items: center;
+    color: #555555;
+    margin-bottom: 5px;
+}
+
 /* Buttons */
 .blog-item form button {
-    padding: 10px 15px;
+    padding: 10px 20px; /* ボタンのパディングを調整 */
     font-size: 1rem;
     color: #ffffff;
     background-color: #007bff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* トランジションを追加 */
+    display: inline-block; /* ボタンをインラインブロックに設定 */
+    margin-right: 10px; /* ボタン間のマージンを追加 */
+    text-align: center; /* テキストを中央揃え */
 }
 
 .blog-item form button:hover {
     background-color: #0056b3;
+    transform: translateY(-2px); /* ホバー時にボタンを少し上に移動 */
 }
 
 /* Responsive Design */
@@ -74,7 +86,12 @@
     .blog-list {
         grid-template-columns: 1fr 1fr;
     }
+    .blog-item form button {
+        width: 100%; /* モバイル表示時にボタンをフル幅に設定 */
+        margin-bottom: 10px; /* ボタン間のマージンを追加 */
+    }
 }
+
 
 @media (max-width: 480px) {
     .blog-list {

@@ -1,0 +1,134 @@
+
+
+.profile-section {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.profile-section h2 {
+    font-size: 1.8rem;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-section form div {
+    margin-bottom: 15px;
+    padding-right: 20px;
+}
+
+.profile-section label {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 5px;
+}
+
+.profile-section .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-section .form-control:focus {
+    border-color: #007bff;
+    outline: 2px solid rgba(0, 123, 255, 0.5); /* 視認性向上のためフォーカスリングを追加 */
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.profile-section button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-section button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.profile-section button:focus {
+    outline: 2px solid rgba(0, 123, 255, 0.5); /* フォーカスリングを追加 */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.profile-section .errors {
+    color: #ff0000;
+    font-size: 0.9rem;
+    margin-top: -5px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.profile-section .form-submit {
+    color: #ffffff;
+}
+
+.profile-section a {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.profile-section a:hover {
+    color: #0056b3;
+}
+
+.profile-section a:focus {
+    outline: 2px solid rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+    .profile-section {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .profile-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .profile-section label {
+        font-size: 0.9rem;
+    }
+
+    .profile-section .form-control {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .profile-section button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .profile-section a {
+        font-size: 0.9rem;
+    }
+}

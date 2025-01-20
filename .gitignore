@@ -1,6 +1,10 @@
-
+venv
 .venv
 .env
+app.yaml
+.gcloudignore
+migration/
+*.pyc
 __pycache__
 *.sqlite3
 *.db

@@ -1,0 +1,25 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block title %}Blog list{% endblock %}
+
+{% block styles %}<link href="{{ url_for('static', filename='css/admin/blog_admin_detail.css')}}" rel="stylesheet">{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+
+{% block content %}
+<section class="blog-container">
+    <h2>Blog List</h2>
+    <div class="blog-list">
+        <section class="blog-item">
+            <h3>{{ post.title }}</h3>
+            <div>{{ post.content|safe }}</div>
+            <p>{{ post.created_at }}</p>
+            <p>{{ post.updated_at }}</p>
+        </section>
+        <form action="{{ url_for('blog.blog_list', post_id=post.id)}}">
+            <button type="submit">戻る</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
